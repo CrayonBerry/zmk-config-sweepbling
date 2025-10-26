@@ -27,7 +27,7 @@
         #binding-cells = <0>;
         bindings = <&kp PLUS>, <&kp MINUS>;
         // Treat Shift as the modifier
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     // MULTIPLY normally, DIVIDE on modifier 
@@ -35,7 +35,7 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp ASTRK>, <&kp FSLH>; // normal '*', with Shift/GUI becomes '/'
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     // DOT normally, COMMA on modifier
@@ -43,7 +43,7 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp DOT>, <&kp COMMA>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     // ── Symmetric pairs: Shift held → send the "right/closing" mate ──
@@ -51,21 +51,21 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LBKT>, <&kp RBKT>;     // [  →  ] (with Shift)
-        mods = <(MOD_LSFT | MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     brace_pair: brace_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LBRC>, <&kp RBRC>;     // {  →  } (with Shift)
-        mods = <(MOD_LSFT | MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     prn_pair: prn_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LPAR>, <&kp RPAR>;     // (  →  ) (with Shift)
-        mods = <(MOD_LSFT | MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
     angle_pair: angle_pair {
@@ -73,7 +73,7 @@
         #binding-cells = <0>;
         // Prefer LT/GT if your tree exports them; otherwise use LESS_THAN/GREATER_THAN.
         bindings = <&kp LT>, <&kp GT>;         // <  →  > (with Shift)
-        mods = <(MOD_LSFT | MOD_RSFT)>;
+        mods = <(LSHIFT | RSHIFT)>;
     };
 
   };
@@ -93,7 +93,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 SPACE &lt 1 BSPC    &lt 3 ENTER &lt 4 TAB
+                                            &lt 2 SPACE &lt 1 BSPC    &lt 3 TAB &lt 4 ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
