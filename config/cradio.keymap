@@ -35,7 +35,7 @@
         #binding-cells = <0>;
         bindings = <&kp PLUS>, <&kp MINUS>;
         // Treat Shift as the modifier
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     // MULTIPLY normally, DIVIDE on modifier 
@@ -43,7 +43,7 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp ASTRK>, <&kp FSLH>; // normal '*', with Shift/GUI becomes '/'
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     // DOT normally, COMMA on modifier
@@ -51,7 +51,7 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp DOT>, <&kp COMMA>;
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     // ── Symmetric pairs: Shift held → send the "right/closing" mate ──
@@ -59,21 +59,21 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LBKT>, <&kp RBKT>;     // [  →  ] (with Shift)
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     brace_pair: brace_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LBRC>, <&kp RBRC>;     // {  →  } (with Shift)
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     prn_pair: prn_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LPAR>, <&kp RPAR>;     // (  →  ) (with Shift)
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     angle_pair: angle_pair {
@@ -81,7 +81,7 @@
         #binding-cells = <0>;
         // Prefer LT/GT if your tree exports them; otherwise use LESS_THAN/GREATER_THAN.
         bindings = <&kp LT>, <&kp GT>;         // <  →  > (with Shift)
-        mods = <(LSHIFT | RSHIFT)>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
   };
