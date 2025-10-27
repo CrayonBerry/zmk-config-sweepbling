@@ -41,7 +41,7 @@
         #binding-cells = <0>;
         bindings = <&kp PLUS>, <&kp MINUS>;
         // Treat Shift as the modifier
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     // MULTIPLY normally, DIVIDE on modifier 
@@ -49,7 +49,7 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp ASTRK>, <&kp FSLH>; 
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     // DOT normally, COMMA on modifier
@@ -57,36 +57,36 @@
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp DOT>, <&kp COMMA>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     // ── Symmetric pairs: Shift held → send the "right/closing" mate ──
     brkt_pair: bracket_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
-        bindings = <&kp A>, <&kp B>;     
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        bindings = <&kp LBKT>, <&kp RBKT>;     
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     brace_pair: brace_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LBRC>, <&kp RBRC>;     
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     prn_pair: prn_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LPAR>, <&kp RPAR>;     
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
     angle_pair: angle_pair {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LT>, <&kp GT>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
+        mods = <(MOD_LALT|MOD_RALT)>;
     };
 
   };
@@ -115,14 +115,14 @@
             display-name = "Numbers & Symbols";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ []       │ {}       │  ()      │  <>      │  $       │   │ HOME     │ 7        │ 8        │ 9        │  */      │
-            &brkt_pair &brace_pair &prn_pair &angle_pair &kp DLLR      &kp SQT    &kp N7     &kp N8     &kp N9     &mdmorph
+        //│ _        │ {}       │  ()      │  <>      │  []      │   │ '"       │ 7        │ 8        │ 9        │  */      │
+            &kp UNDER  &brace_pair &prn_pair &angle_pair &brkt_pair    &kp SQT    &kp N7     &kp N8     &kp N9     &mdmorph
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ !        │  4       │  5       │  6       │          │   │ .,       │ 4        │ 5        │ 6        │  +-      │
+        //│ !        │ @        │  #       │ %        │ *        │   │ .,       │ 4        │ 5        │ 6        │  +-      │
             &kp EXCL   &kp AT     &kp HASH   &kp PRCNT  &kp ASTRK      &dcmorph   &kp N4     &kp N5     &kp N6     &pmorph
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Shift    │  7       │  8       │  9       │  0       │   │ 0        │ 1        │ 2        │ 3        │          │
-            &kp LSHIFT  &kp TILDE  &kp CARET  &kp AMPS   &kp PIPE      &kp N0     &kp N1     &kp N2     &kp N3     &kp EQUAL
+        //│ Shift    │  ALT     │ ^        │ &        │ \|       │   │ 0        │ 1        │ 2        │ 3        │          │
+            &kp LSHIFT  &kp LALT  &kp CARET  &kp AMPS   &kp BSLH      &kp N0     &kp N1     &kp N2     &kp N3     &kp EQUAL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp SPACE   &none       &kp TAB    &kp ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
